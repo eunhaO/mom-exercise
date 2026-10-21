@@ -377,7 +377,8 @@ svg .cardf{fill:var(--card)}
     });
   }
 })();
-try{ if(matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('svg').forEach(function(s){ if(s.pauseAnimations) s.pauseAnimations(); }); } }catch(e){}
+/* 운동 따라하기용 그림이라 '동작 줄이기' 설정이 켜져 있어도 항상 움직이게 함 */
+try{ document.querySelectorAll('svg').forEach(function(s){ if(s.unpauseAnimations) s.unpauseAnimations(); }); }catch(e){}
 </script>
 
 </body>
