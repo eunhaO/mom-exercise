@@ -1,0 +1,347 @@
+<title>엄마 운동 안내</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap">
+<style>
+/* 한 줄 세로 스크롤: 운동 하나 = 움직이는 그림 + 큰 글씨 카드 */
+:root{
+  --bg:#EDF3EF; --card:#FFFFFF; --ink:#1E2A25; --soft:#55645D;
+  --accent:#2E7A58; --accentSoft:#D9EEE2; --warm:#D9822B; --warmSoft:#FBEBD8; --line:#C9D8CF;
+  --skin:#F7D2B3; --hair:#7A4A2E; --shirt:#F0846A; --pants:#4C5D86; --shoe:#6B4C38;
+  --blush:#F59C9C; --face:#3B2D28; --wood:#C99A6B; --water:#5DB8D8; --momo:#26262B; --stroller:#F2B544;
+  --display:"Jua","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141B18; --card:#1E2823; --ink:#EEF4F0; --soft:#A9B9B1;
+  --accent:#6CC79A; --accentSoft:#26392F; --warm:#F0A85A; --warmSoft:#3A2C1C; --line:#33443B;
+  --skin:#EFC4A2; --hair:#9A6342; --shirt:#F2927A; --pants:#7D93C4; --shoe:#C9A27E;
+  --blush:#EE8F8F; --face:#3B2D28; --wood:#B98A5E; --water:#4AA6C6; --momo:#0F0F12; --stroller:#E6A93A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141B18; --card:#1E2823; --ink:#EEF4F0; --soft:#A9B9B1;
+  --accent:#6CC79A; --accentSoft:#26392F; --warm:#F0A85A; --warmSoft:#3A2C1C; --line:#33443B;
+  --skin:#EFC4A2; --hair:#9A6342; --shirt:#F2927A; --pants:#7D93C4; --shoe:#C9A27E;
+  --blush:#EE8F8F; --face:#3B2D28; --wood:#B98A5E; --water:#4AA6C6; --momo:#0F0F12; --stroller:#E6A93A; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:20px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:2.1rem;color:var(--accent)}
+.intro p{margin:6px 0 0;color:var(--soft)}
+.rule{background:var(--accentSoft);border-radius:18px;padding:18px 20px;font-size:1.25rem;font-weight:700;text-align:center}
+.rule span{color:var(--accent)}
+.sec{font-family:var(--display);font-size:1.15rem;color:var(--soft);margin:8px 0 -8px;letter-spacing:.02em}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;overflow:hidden}
+.pic{background:var(--accentSoft);display:flex;justify-content:center}
+.pic svg{width:100%;max-width:420px;height:auto;display:block}
+.txt{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px}
+.txt h2{font-size:1.65rem}
+.how{margin:0;padding-left:1.2em}
+.how li{margin:4px 0}
+.tag{display:inline-block;background:var(--warmSoft);color:var(--ink);border-radius:999px;padding:4px 14px;font-size:1rem;font-weight:700;align-self:flex-start}
+.tag b{color:var(--warm)}
+.note{margin:0;color:var(--soft);font-size:1.05rem}
+.momo .pic,.mall .pic{background:var(--warmSoft)}
+.caution{background:var(--warmSoft);border:2px solid var(--warm);border-radius:22px;padding:20px}
+.caution h2{font-size:1.6rem;color:var(--warm);margin-bottom:8px}
+.caution ul{margin:0;padding-left:1.2em}
+.caution li{margin:8px 0}
+.end{text-align:center;font-family:var(--display);font-size:1.4rem;color:var(--accent);padding-top:6px}
+/* 그림 공통 */
+svg .skin{fill:var(--skin)} svg .hair{fill:var(--hair)} svg .shirt{fill:var(--shirt)}
+svg .face{fill:var(--face)} svg .blush{fill:var(--blush)} svg .shoe{fill:var(--shoe)}
+svg .smile{fill:none;stroke:var(--face);stroke-width:2;stroke-linecap:round}
+svg .pants{stroke:var(--pants);stroke-width:12;stroke-linecap:round}
+svg .sleeve{stroke:var(--shirt);stroke-width:10;stroke-linecap:round}
+svg .back{opacity:.8}
+svg .wood{fill:var(--wood)} svg .woodl{stroke:var(--wood);stroke-width:6;stroke-linecap:round}
+svg .floor{stroke:var(--line);stroke-width:4;stroke-linecap:round}
+svg .dots{stroke:var(--soft);stroke-width:4;stroke-linecap:round;stroke-dasharray:4 14;opacity:.5}
+svg .lbl{fill:var(--ink);font-family:var(--display);font-size:17px}
+svg .lblA{fill:var(--accent);font-family:var(--display);font-size:20px}
+svg .momo{fill:var(--momo)}
+svg .wheel{fill:var(--card);stroke:var(--ink);stroke-width:4}
+svg .spoke{stroke:var(--ink);stroke-width:2.5}
+svg .cardf{fill:var(--card)}
+</style>
+
+<div class="wrap">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- 엄마 얼굴 (중심 0,0) -->
+      <g id="head">
+        <circle class="hair" cx="-13" cy="-8" r="9"/><circle class="hair" cx="-4" cy="-15" r="10"/>
+        <circle class="hair" cx="8" cy="-14" r="10"/><circle class="hair" cx="15" cy="-5" r="8"/>
+        <circle class="hair" cx="-16" cy="3" r="7"/><circle class="hair" cx="16" cy="5" r="7"/>
+        <circle class="skin" cx="0" cy="2" r="16"/>
+        <circle class="face" cx="-6" cy="1" r="2.5"/><circle class="face" cx="6" cy="1" r="2.5"/>
+        <ellipse class="blush" cx="-10" cy="7" rx="3.6" ry="2.3"/><ellipse class="blush" cx="10" cy="7" rx="3.6" ry="2.3"/>
+        <path class="smile" d="M-4 8 Q0 12 4 8"/>
+      </g>
+      <!-- 걷는 다리 (발 바닥 0) -->
+      <g id="legs">
+        <g class="back"><line class="pants" x1="0" y1="-42" x2="0" y2="-7"/><ellipse class="shoe" cx="5" cy="-3" rx="9" ry="5"/>
+          <animateTransform attributeName="transform" type="rotate" values="20 0 -42;-20 0 -42;20 0 -42" dur="1.4s" repeatCount="indefinite"/></g>
+        <g><line class="pants" x1="0" y1="-42" x2="0" y2="-7"/><ellipse class="shoe" cx="5" cy="-3" rx="9" ry="5"/>
+          <animateTransform attributeName="transform" type="rotate" values="-20 0 -42;20 0 -42;-20 0 -42" dur="1.4s" repeatCount="indefinite"/></g>
+      </g>
+      <!-- 팔 흔들며 걷기 -->
+      <g id="walker"><g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur=".7s" repeatCount="indefinite"/>
+        <g class="back"><line class="sleeve" x1="0" y1="-80" x2="0" y2="-58"/><circle class="skin" cx="0" cy="-54" r="5"/>
+          <animateTransform attributeName="transform" type="rotate" values="-25 0 -80;25 0 -80;-25 0 -80" dur="1.4s" repeatCount="indefinite"/></g>
+        <use href="#legs"/>
+        <rect class="shirt" x="-16" y="-90" width="32" height="52" rx="15"/>
+        <g><line class="sleeve" x1="0" y1="-80" x2="0" y2="-58"/><circle class="skin" cx="0" cy="-54" r="5"/>
+          <animateTransform attributeName="transform" type="rotate" values="25 0 -80;-25 0 -80;25 0 -80" dur="1.4s" repeatCount="indefinite"/></g>
+        <use href="#head" transform="translate(0,-106)"/>
+      </g></g>
+      <!-- 밀면서 걷기 (손 위치 28,-63) -->
+      <g id="pusher"><g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur=".7s" repeatCount="indefinite"/>
+        <use href="#legs"/>
+        <rect class="shirt" x="-16" y="-90" width="32" height="52" rx="15"/>
+        <line class="sleeve" x1="2" y1="-78" x2="24" y2="-65"/><circle class="skin" cx="28" cy="-63" r="5"/>
+        <use href="#head" transform="translate(0,-106)"/>
+      </g></g>
+    </defs>
+  </svg>
+
+  <header class="intro">
+    <h1>엄마, 오늘도 조금만 움직여요</h1>
+    <p>병원에서 꼭 하라고 하신 운동이에요. 허리에 무리 없는 것만 골랐어요. 그림을 보면서 똑같이 따라 해보세요.</p>
+  </header>
+
+  <div class="rule">매일 · <span>짧게</span> · 집 안에서도 OK</div>
+
+  <div class="sec">밥 먹고 나서</div>
+  <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 170" role="img" aria-label="거실에서 걷는 그림">
+      <rect class="cardf" x="24" y="26" width="56" height="44" rx="6"/>
+      <path d="M52 26 V70 M24 48 H80" stroke="var(--line)" stroke-width="4"/>
+      <rect x="22" y="22" width="60" height="52" rx="8" fill="none" stroke="var(--wood)" stroke-width="5"/>
+      <circle class="cardf" cx="200" cy="40" r="18" stroke="var(--ink)" stroke-width="4"/>
+      <line x1="200" y1="40" x2="200" y2="28" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="200" y1="40" x2="209" y2="40" stroke="var(--accent)" stroke-width="3" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="0 200 40" to="360 200 40" dur="4s" repeatCount="indefinite"/></line>
+      <path d="M186 150 L190 124 H214 L218 150 Z" fill="var(--warm)"/>
+      <circle cx="196" cy="114" r="10" fill="var(--accent)"/><circle cx="210" cy="108" r="11" fill="var(--accent)"/><circle cx="204" cy="98" r="9" fill="var(--accent)"/>
+      <line class="floor" x1="10" y1="152" x2="230" y2="152"/>
+      <line class="dots" x1="10" y1="162" x2="230" y2="162"><animate attributeName="stroke-dashoffset" from="0" to="36" dur="1s" repeatCount="indefinite"/></line>
+      <use href="#walker" transform="translate(120,152)"/>
+    </svg></div>
+    <div class="txt">
+      <h2>집 안에서 걷기</h2>
+      <ul class="how">
+        <li>식사 끝나고 바로 거실이나 복도를 천천히 걸어요</li>
+        <li>팔을 가볍게 흔들면서, 그림처럼 편하게</li>
+        <li>TV 보면서 왔다 갔다 해도 괜찮아요</li>
+      </ul>
+      <span class="tag">⏱ 밥 먹고 <b>10~15분</b></span>
+      <p class="note">밥 먹고 조금만 걸어도 혈당이 덜 올라가요.</p>
+    </div>
+  </article>
+
+  <div class="sec">덥거나 추운 날</div>
+  <article class="card mall">
+    <div class="pic"><svg viewBox="0 0 240 170" role="img" aria-label="마트에서 카트를 밀며 걷는 그림">
+      <g>
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-80 0" dur="3s" repeatCount="indefinite"/>
+        <g id="shelf">
+          <rect x="10" y="40" width="64" height="84" rx="6" class="wood" opacity=".55"/>
+          <line x1="14" y1="68" x2="70" y2="68" class="woodl"/><line x1="14" y1="96" x2="70" y2="96" class="woodl"/>
+          <rect x="18" y="48" width="14" height="17" rx="3" fill="var(--accent)"/><rect x="36" y="52" width="12" height="13" rx="3" fill="var(--shirt)"/><rect x="52" y="46" width="14" height="19" rx="3" fill="var(--water)"/>
+          <circle cx="24" cy="88" r="6" fill="var(--shirt)"/><circle cx="37" cy="88" r="6" fill="var(--stroller)"/><rect x="50" y="78" width="16" height="15" rx="3" fill="var(--accent)"/>
+        </g>
+        <use href="#shelf" x="80"/><use href="#shelf" x="160"/><use href="#shelf" x="240"/>
+      </g>
+      <line class="floor" x1="0" y1="152" x2="240" y2="152"/>
+      <use href="#pusher" transform="translate(84,152)"/>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur=".7s" repeatCount="indefinite"/>
+        <path d="M112 89 H120 L128 122 H172 L178 98 H124" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="140" cy="94" r="7" fill="var(--shirt)"/><rect x="150" y="84" width="16" height="14" rx="3" fill="var(--accent)"/>
+        <line x1="134" y1="122" x2="136" y2="138" stroke="var(--ink)" stroke-width="4"/><line x1="170" y1="122" x2="168" y2="138" stroke="var(--ink)" stroke-width="4"/>
+      </g>
+      <circle class="wheel" cx="136" cy="144" r="6"/><circle class="wheel" cx="168" cy="144" r="6"/>
+    </svg></div>
+    <div class="txt">
+      <h2>마트·쇼핑몰 걷기</h2>
+      <ul class="how">
+        <li>대형마트, 쇼핑몰, 지하상가 안을 천천히 한 바퀴</li>
+        <li>카트를 밀면 몸을 기댈 수 있어서 더 편해요</li>
+        <li>의자가 많으니 힘들면 앉아서 쉬어요</li>
+      </ul>
+      <span class="tag">⏱ <b>20~30분</b>, 쉬엄쉬엄</span>
+    </div>
+  </article>
+
+  <div class="sec">의자 하나로 하는 운동</div>
+  <article class="card">
+    <div class="pic"><svg viewBox="0 -34 240 184" role="img" aria-label="의자에서 천천히 일어섰다 앉는 그림">
+      <line class="woodl" x1="52" y1="62" x2="52" y2="142"/>
+      <rect class="wood" x="48" y="116" width="56" height="9" rx="4"/>
+      <line class="woodl" x1="58" y1="124" x2="58" y2="142"/><line class="woodl" x1="96" y1="124" x2="96" y2="142"/>
+      <line class="floor" x1="20" y1="144" x2="230" y2="144"/>
+      <line class="pants" x1="110" y1="110" x2="110" y2="134"/><ellipse class="shoe" cx="116" cy="138" rx="10" ry="5"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0 110 110;90 110 110;90 110 110;0 110 110;0 110 110" keyTimes="0;.3;.5;.8;1" calcMode="spline" keySplines=".45 0 .55 1;0 0 1 1;.45 0 .55 1;0 0 1 1" dur="4.4s" repeatCount="indefinite"/>
+        <line class="pants" x1="110" y1="110" x2="78" y2="110"/>
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="0 78 110;-90 78 110;-90 78 110;0 78 110;0 78 110" keyTimes="0;.3;.5;.8;1" calcMode="spline" keySplines=".45 0 .55 1;0 0 1 1;.45 0 .55 1;0 0 1 1" dur="4.4s" repeatCount="indefinite"/>
+          <rect class="shirt" x="63" y="58" width="31" height="56" rx="15"/>
+          <line class="sleeve" x1="82" y1="72" x2="106" y2="76"/><circle class="skin" cx="110" cy="76" r="5"/>
+          <use href="#head" transform="translate(78,40)"/>
+        </g>
+      </g>
+      <text class="lblA" x="190" y="30" text-anchor="middle">천천히 ↑<animate attributeName="opacity" values="1;0" keyTimes="0;.5" calcMode="discrete" dur="4.4s" repeatCount="indefinite"/></text>
+      <text class="lblA" x="190" y="30" text-anchor="middle" opacity="0">천천히 ↓<animate attributeName="opacity" values="0;1" keyTimes="0;.5" calcMode="discrete" dur="4.4s" repeatCount="indefinite"/></text>
+    </svg></div>
+    <div class="txt">
+      <h2>앉았다 일어서기</h2>
+      <ul class="how">
+        <li>튼튼한 의자에 앉아 팔은 앞으로 쭉</li>
+        <li>천천히 일어섰다가, 천천히 앉아요</li>
+        <li>힘들면 손으로 의자를 짚어도 돼요</li>
+      </ul>
+      <span class="tag">🔁 <b>5번</b>부터, 익숙해지면 10번</span>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="pic"><svg viewBox="0 -26 240 176" role="img" aria-label="의자에 앉아 다리를 앞으로 폈다 내리는 그림">
+      <line class="woodl" x1="52" y1="62" x2="52" y2="142"/>
+      <rect class="wood" x="48" y="116" width="56" height="9" rx="4"/>
+      <line class="woodl" x1="58" y1="124" x2="58" y2="142"/><line class="woodl" x1="96" y1="124" x2="96" y2="142"/>
+      <line class="floor" x1="20" y1="144" x2="230" y2="144"/>
+      <g class="back"><line class="pants" x1="104" y1="110" x2="104" y2="134"/><ellipse class="shoe" cx="110" cy="138" rx="10" ry="5"/></g>
+      <rect class="shirt" x="62" y="58" width="31" height="56" rx="15"/>
+      <line class="pants" x1="78" y1="110" x2="112" y2="110"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0 112 110;-82 112 110;-82 112 110;0 112 110;0 112 110" keyTimes="0;.22;.62;.84;1" calcMode="spline" keySplines=".45 0 .55 1;0 0 1 1;.45 0 .55 1;0 0 1 1" dur="5s" repeatCount="indefinite"/>
+        <line class="pants" x1="112" y1="110" x2="112" y2="134"/><ellipse class="shoe" cx="118" cy="138" rx="10" ry="5"/>
+      </g>
+      <line class="sleeve" x1="76" y1="74" x2="86" y2="98"/><circle class="skin" cx="88" cy="102" r="5"/>
+      <use href="#head" transform="translate(77,40)"/>
+      <text class="lblA" x="150" y="40" text-anchor="middle" opacity="0">하나<animate attributeName="opacity" values="0;1;0" keyTimes="0;.24;.62" calcMode="discrete" dur="5s" repeatCount="indefinite"/></text>
+      <text class="lblA" x="186" y="40" text-anchor="middle" opacity="0">둘<animate attributeName="opacity" values="0;1;0" keyTimes="0;.37;.62" calcMode="discrete" dur="5s" repeatCount="indefinite"/></text>
+      <text class="lblA" x="218" y="40" text-anchor="middle" opacity="0">셋<animate attributeName="opacity" values="0;1;0" keyTimes="0;.5;.62" calcMode="discrete" dur="5s" repeatCount="indefinite"/></text>
+    </svg></div>
+    <div class="txt">
+      <h2>앉아서 다리 펴기</h2>
+      <ul class="how">
+        <li>의자에 등을 기대고 앉아요</li>
+        <li>한쪽 다리를 앞으로 쭉 펴고 <b>하나, 둘, 셋</b> 세고 내려요</li>
+        <li>반대쪽도 똑같이</li>
+      </ul>
+      <span class="tag">🔁 한쪽씩 <b>10번</b></span>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="pic"><svg viewBox="0 -24 240 176" role="img" aria-label="싱크대를 짚고 발뒤꿈치를 들었다 내리는 그림">
+      <rect class="wood" x="150" y="76" width="70" height="72" rx="6"/>
+      <rect x="146" y="68" width="78" height="10" rx="4" fill="var(--soft)"/>
+      <rect class="cardf" x="160" y="90" width="22" height="46" rx="4" opacity=".6"/><rect class="cardf" x="188" y="90" width="22" height="46" rx="4" opacity=".6"/>
+      <line class="floor" x1="20" y1="150" x2="230" y2="150"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="0 114 148;30 114 148;30 114 148;0 114 148;0 114 148" keyTimes="0;.25;.55;.8;1" calcMode="spline" keySplines=".45 0 .55 1;0 0 1 1;.45 0 .55 1;0 0 1 1" dur="4s" repeatCount="indefinite"/>
+        <ellipse class="shoe" cx="103" cy="147" rx="11" ry="5"/>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 -9;0 0;0 0" keyTimes="0;.25;.55;.8;1" calcMode="spline" keySplines=".45 0 .55 1;0 0 1 1;.45 0 .55 1;0 0 1 1" dur="4s" repeatCount="indefinite"/>
+        <line class="pants back" x1="96" y1="108" x2="96" y2="143"/>
+        <line class="pants" x1="100" y1="108" x2="100" y2="143"/>
+        <rect class="shirt" x="82" y="60" width="32" height="52" rx="15"/>
+        <line class="sleeve" x1="104" y1="72" x2="142" y2="70"/><circle class="skin" cx="146" cy="70" r="5"/>
+        <use href="#head" transform="translate(98,44)"/>
+      </g>
+      <text class="lblA" x="44" y="80" text-anchor="middle">↑ 들고<animate attributeName="opacity" values="1;0" keyTimes="0;.55" calcMode="discrete" dur="4s" repeatCount="indefinite"/></text>
+      <text class="lblA" x="44" y="80" text-anchor="middle" opacity="0">↓ 내리고<animate attributeName="opacity" values="0;1" keyTimes="0;.55" calcMode="discrete" dur="4s" repeatCount="indefinite"/></text>
+    </svg></div>
+    <div class="txt">
+      <h2>벽 짚고 발뒤꿈치 들기</h2>
+      <ul class="how">
+        <li>벽이나 싱크대를 두 손으로 짚어요</li>
+        <li>발뒤꿈치를 천천히 들었다 내려요</li>
+        <li>설거지하다가 해도 좋아요</li>
+      </ul>
+      <span class="tag">🔁 <b>10번</b>씩, 하루 2~3번</span>
+    </div>
+  </article>
+
+  <div class="sec">해볼 만한 것</div>
+  <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 170" role="img" aria-label="수영장 물속에서 걷는 그림">
+      <use href="#walker" transform="translate(120,160)"/>
+      <g opacity=".55">
+        <path d="M-40 96 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 V170 H-40 Z" fill="var(--water)">
+          <animateTransform attributeName="transform" type="translate" from="0 0" to="40 0" dur="2.4s" repeatCount="indefinite"/></path>
+      </g>
+      <circle cx="60" cy="130" r="4" fill="var(--card)" opacity=".7"><animate attributeName="cy" values="150;100" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="180" cy="140" r="3" fill="var(--card)" opacity=".7"><animate attributeName="cy" values="160;100" dur="2.8s" repeatCount="indefinite"/></circle>
+    </svg></div>
+    <div class="txt">
+      <h2>물속에서 걷기</h2>
+      <ul class="how">
+        <li>수영이 아니라 수영장 안에서 걷기만 해요</li>
+        <li>물이 몸을 받쳐줘서 허리가 편해요</li>
+        <li>복지관·구민 수영장에 어르신 반이 있는지 물어봐요</li>
+      </ul>
+      <span class="tag">⏱ <b>20분</b> 정도</span>
+    </div>
+  </article>
+
+  <article class="card momo">
+    <div class="pic"><svg viewBox="0 0 240 170" role="img" aria-label="모모를 유모차에 태우고 산책하는 그림">
+      <circle cx="205" cy="32" r="14" fill="var(--stroller)"/>
+      <line class="floor" x1="0" y1="154" x2="240" y2="154"/>
+      <line class="dots" x1="0" y1="164" x2="240" y2="164"><animate attributeName="stroke-dashoffset" from="0" to="36" dur="1s" repeatCount="indefinite"/></line>
+      <use href="#pusher" transform="translate(56,154)"/>
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur=".7s" repeatCount="indefinite"/>
+        <line x1="84" y1="91" x2="104" y2="104" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="1.1s" repeatCount="indefinite"/>
+          <circle class="momo" cx="146" cy="96" r="9"/><circle class="momo" cx="178" cy="96" r="9"/>
+          <circle class="momo" cx="162" cy="76" r="10"/>
+          <circle class="momo" cx="162" cy="92" r="14"/>
+          <circle class="momo" cx="172" cy="98" r="7"/>
+          <circle cx="156" cy="89" r="3" fill="var(--card)"/><circle cx="167" cy="89" r="3" fill="var(--card)"/>
+          <circle class="face" cx="156.5" cy="89.5" r="1.8"/><circle class="face" cx="167.5" cy="89.5" r="1.8"/>
+          <ellipse cx="173" cy="104" rx="3" ry="4" fill="var(--blush)"/>
+        </g>
+        <path d="M104 104 Q104 70 138 70 L138 104 Z" fill="var(--accent)"/>
+        <path d="M100 104 H200 Q200 132 172 132 H128 Q100 132 100 104 Z" fill="var(--stroller)"/>
+        <line x1="126" y1="132" x2="124" y2="140" stroke="var(--ink)" stroke-width="4"/><line x1="176" y1="132" x2="178" y2="140" stroke="var(--ink)" stroke-width="4"/>
+      </g>
+      <g><circle class="wheel" cx="124" cy="144" r="9"/><line class="spoke" x1="124" y1="136" x2="124" y2="152"/><line class="spoke" x1="116" y1="144" x2="132" y2="144"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 124 144" to="360 124 144" dur="1.2s" repeatCount="indefinite"/></g>
+      <g><circle class="wheel" cx="178" cy="144" r="9"/><line class="spoke" x1="178" y1="136" x2="178" y2="152"/><line class="spoke" x1="170" y1="144" x2="186" y2="144"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 178 144" to="360 178 144" dur="1.2s" repeatCount="indefinite"/></g>
+    </svg></div>
+    <div class="txt">
+      <h2>모모랑 유모차 산책</h2>
+      <ul class="how">
+        <li>유모차 미는 것만으로도 좋은 걷기 운동이에요</li>
+        <li>공원에 가면 모모를 잠깐 내려서 몇 걸음 걷게 해요</li>
+        <li>모모가 걸으면 간식 하나 주고 칭찬해 줘요</li>
+      </ul>
+      <span class="tag">☀️ 날씨 좋은 날</span>
+    </div>
+  </article>
+
+  <section class="caution">
+    <h2>꼭 기억해요</h2>
+    <ul>
+      <li>허리를 <b>숙이거나 비트는 동작</b>은 하지 않아요</li>
+      <li>아프거나 어지러우면 <b>바로 멈추고</b> 쉬어요</li>
+      <li>적게 해도 괜찮아요. <b>매일 조금씩</b>이 제일 중요해요</li>
+      <li>시작 전에 병원이나 보건소에 허리 다친 적 있다고 말하고 물어봐요</li>
+    </ul>
+  </section>
+
+  <p class="end">오늘도 수고하셨어요 💚</p>
+</div>
+<script>
+try{ if(matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('svg').forEach(function(s){ if(s.pauseAnimations) s.pauseAnimations(); }); } }catch(e){}
+</script>
