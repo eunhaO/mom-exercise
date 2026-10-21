@@ -353,6 +353,26 @@ svg .cardf{fill:var(--card)}
   <p class="end">오늘도 수고하셨어요 💚</p>
 </div>
 <script>
+/* 일부 휴대폰 브라우저(아이폰 사파리 등)는 <use>로 복사한 그림에 색을 못 입혀 검게 보여서, 실제 그림으로 펼쳐 넣음 */
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  for(var round=0; round<6; round++){
+    var uses=[].slice.call(document.querySelectorAll('.wrap use'));
+    if(!uses.length) break;
+    uses.forEach(function(u){
+      var ref=(u.getAttribute('href')||u.getAttribute('xlink:href')||'').replace('#','');
+      var src=document.getElementById(ref); if(!src) return;
+      var c=src.cloneNode(true); c.removeAttribute('id');
+      [].forEach.call(c.querySelectorAll('[id]'),function(e){e.removeAttribute('id')});
+      var g=document.createElementNS(NS,'g');
+      var t=u.getAttribute('transform')||'', x=u.getAttribute('x'), y=u.getAttribute('y');
+      if(x||y) t+=' translate('+(x||0)+','+(y||0)+')';
+      if(t) g.setAttribute('transform',t);
+      if(u.getAttribute('class')) g.setAttribute('class',u.getAttribute('class'));
+      g.appendChild(c); u.parentNode.replaceChild(g,u);
+    });
+  }
+})();
 try{ if(matchMedia('(prefers-reduced-motion: reduce)').matches){ document.querySelectorAll('svg').forEach(function(s){ if(s.pauseAnimations) s.pauseAnimations(); }); } }catch(e){}
 </script>
 
